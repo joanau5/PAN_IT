@@ -5,6 +5,9 @@ The app provides daily prompts, saves entries locally for privacy, and generates
 ## Design Documentation
 Please use this link: [Design Document (PDF)](./Design%20Document.pdf) to access design doc or the pdf is also accessible/uploaded in this repo.
 
+## Presentation
+Please use this link: https://www.youtube.com/watch?v=sL1mnherm8w
+
 ## Installation & Usage
 
 ### Prerequisites
