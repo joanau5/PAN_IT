@@ -1,24 +1,20 @@
-type AnalyzeResponse = {
-    empatheticReply: string;
-    followUpQ: string;
-    sentiment: number;
-    emotions: string[];
-    topics: string[];
-    summary: string;
-};
+const BASE = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+// quick debug 
+console.log("API BASE =>", BASE);
 
 export async function getPrompt(): Promise<string> {
-    const res = await fetch("/api/prompt");
-    const data = await res.json();
-    return data.prompt as string;
+    const r = await fetch(`${BASE}/prompt`);
+    if (!r.ok) throw new Error("prompt failed");
+    const j = await r.json();
+    return j.prompt as string;
 }
 
-export async function analyzeText(text: string): Promise<AnalyzeResponse> {
-    const res = await fetch("/api/analyze", {
+export async function analyzeText(text: string) {
+    const r = await fetch(`${BASE}/analyze`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
     });
-    if (!res.ok) throw new Error("Analyze failed");
-    return res.json();
+    if (!r.ok) throw new Error("analyze failed");
+    return r.json();
 }

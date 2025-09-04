@@ -13,7 +13,4 @@ app.use(express.json());
 // API routes
 app.use("/api", api);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`API running at http://localhost:${port}`);
-});
+app.listen(3000, () => console.log("API running at http://localhost:3000"));
