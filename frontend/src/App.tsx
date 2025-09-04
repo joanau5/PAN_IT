@@ -1,15 +1,17 @@
-import './App.css'
+import { Routes, Route, Navigate } from "react-router-dom";
+import Nav from "./components/Nav";
+import Write from "./pages/Write";
+import Insights from "./pages/Insights";
 
-function App() {
+export default function App() {
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-blue-100">
-      <h1 className="text-4xl font-bold text-red-500">
-        Tailwind is working!
-      </h1>
-      <p className="text-gray-700 mt-2">
-      </p>
+    <div className="mx-auto max-w-3xl p-4">
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Navigate to="/write" replace />} />
+        <Route path="/write" element={<Write />} />
+        <Route path="/insights" element={<Insights />} />
+      </Routes>
     </div>
   );
 }
-
-export default App;
