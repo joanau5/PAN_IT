@@ -27,7 +27,7 @@ Please use this link: [Design Document (PDF)](./Design%20Document.pdf) to access
 4. Open three terminals
 5. Terminal 1: Run Ollama with your model
    ```bash
-   ollama run phi3:mini
+   ollama serve
 7. Terminal 2: Start the backend server (make sure to cd into backend folder)
    ```bash
    npm run server
